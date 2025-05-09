@@ -20,7 +20,13 @@ view: products {
   dimension: brand {
     type: string
     sql: ${TABLE}.brand ;;
+    link: {
+      label: "Google"
+      url: "https://www.google.com/search?q={{ value }}"
+      icon_url: "https://google.com/favicon.ico"
+    }
   }
+
 
   dimension: category {
     type: string
@@ -41,6 +47,7 @@ view: products {
     type: number
     sql: ${TABLE}.distribution_center_id ;;
   }
+
 
   dimension: name {
     type: string
