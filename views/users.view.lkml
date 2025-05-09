@@ -100,9 +100,9 @@ view: users {
     drill_fields: [detail*]
   }
 
-  measure: total_age {
-    type: sum
-    sql: ${age} ;;  }
+  # measure: total_age {
+  #   type: sum
+  #   sql: ${age} ;;  }
 
 
   measure: average_age {
