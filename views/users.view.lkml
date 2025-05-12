@@ -19,7 +19,7 @@ view: users {
 
   dimension: age {
     type: number
-    sql: ${TABLE}.age_test ;;
+    sql: ${TABLE}.age ;;
   }
 
   dimension: city {
@@ -27,7 +27,7 @@ view: users {
     sql: ${TABLE}.city ;;
   }
 
-  dimension: country {
+  dimension: country_rename {
     type: string
     map_layer_name: countries
     sql: ${TABLE}.country ;;
