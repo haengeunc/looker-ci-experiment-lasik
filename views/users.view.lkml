@@ -19,7 +19,7 @@ view: users {
 
   dimension: age {
     type: number
-    sql: ${TABLE}.age ;;
+    sql: ${TABLE}.age_test ;;
   }
 
   dimension: city {
