@@ -27,7 +27,7 @@ view: users {
     sql: ${TABLE}.city ;;
   }
 
-  dimension: country {
+  dimension: country_rename {
     type: string
     map_layer_name: countries
     sql: ${TABLE}.country ;;
