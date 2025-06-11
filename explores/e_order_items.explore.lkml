@@ -1,6 +1,12 @@
-include: "/views/users.view.lkml"
-include: "/views/order_items.view.lkml"
-include: "/views/inventory_items.view.lkml"
+
+
+include: "/_staging_views/customer_sales/users.layer.lkml"
+include: "/_staging_views/customer_sales/order_items.layer.lkml"
+
+
+include: "/_staging_views/fulfilment/products.layer.lkml"
+include: "/_staging_views/fulfilment/inventory_items.layer.lkml"
+
 include: "/views/products.view.lkml"
 include: "/views/orders.view.lkml"
 include: "/views/distribution_centers.view.lkml"
@@ -10,7 +16,6 @@ explore: order_items {
   # always_filter: {
   #   filters: [users.country: "Germany"]
   # }
-
 
   join: users {
     type: left_outer

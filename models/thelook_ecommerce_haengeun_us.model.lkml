@@ -3,7 +3,6 @@
 connection: "haengeun_bq"
 
 # include all the views
-include: "/views/**/*.view.lkml"
 include: "/explores/*.lkml"
 
 # Datagroups define a caching policy for an Explore. To learn more,

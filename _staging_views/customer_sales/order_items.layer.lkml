@@ -1,0 +1,27 @@
+include: "/views/order_items.view.lkml"
+
+view: +order_items {
+
+  measure: total_sale_price {
+    type: sum
+    sql: ${sale_price} ;;
+    value_format:"$#.00;($#.00)"
+
+  }
+
+  measure: average_sale_price {
+    type: average
+    sql: ${sale_price} ;;  }
+
+  measure: first_order {
+    type: date
+    sql: MIN(${created_date}) ;;
+
+  }
+
+  measure: latest_order {
+    type: date
+    sql: MAX(${created_date}) ;;
+
+  }
+}
