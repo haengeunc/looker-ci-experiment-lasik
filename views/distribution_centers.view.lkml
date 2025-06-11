@@ -1,5 +1,5 @@
 view: distribution_centers {
-  sql_table_name: `haengeun-429200.thelook_ecommerce_haengeun_us.distribution_centers` ;;
+  sql_table_name: `haengeun-429200.thelook_ecommerce_haengeun_us.distribution_centers`;;
   drill_fields: [id]
 
   dimension: id {
