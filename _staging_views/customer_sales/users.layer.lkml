@@ -1,4 +1,4 @@
-include: "/_base_views/users.view.lkml"
+include: "/views/users.view.lkml"
 
 
 view: +users {

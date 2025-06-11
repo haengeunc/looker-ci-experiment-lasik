@@ -1,4 +1,4 @@
-include: "/_base_views/order_items.view.lkml"
+include: "/views/order_items.view.lkml"
 
 view: +order_items {
 
