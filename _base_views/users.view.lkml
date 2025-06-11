@@ -99,18 +99,6 @@ view: users {
     type: count
     drill_fields: [detail*]
   }
-
-  # measure: total_age {
-  #   type: sum
-  #   sql: ${age} ;;  }
-
-
-  measure: average_age {
-    type: average
-    sql: ${age} ;;  }
-
-
-
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
