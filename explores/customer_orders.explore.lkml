@@ -1,11 +1,7 @@
-
-
 include: "/_staging_views/users.layer.lkml"
 include: "/_staging_views/order_items.layer.lkml"
 include: "/_staging_views/products.layer.lkml"
-include: "/_staging_views/fov_example.view"
-
-include: "/views/orders.view.lkml"
+include: "/_staging_views/orders.layer.lkml"
 
 
 
@@ -35,4 +31,15 @@ explore: order_items {
     sql: ;; # leave blank for bare joins
   }
 
+}
+
+#-----------------------------------------------------
+
+view: fov_example {
+  #field-only view i.e. no sql_table_name argument
+
+  measure: avg_orders_per_user{
+    sql: ${orders.count} / ${users.count} ;;
+    type: number
+  }
 }

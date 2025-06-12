@@ -1,8 +1,5 @@
-
-
 include: "/_staging_views/products.layer.lkml"
 include: "/_staging_views/inventory_items.layer.lkml"
-
 include: "/views/distribution_centers.view.lkml"
 
 
