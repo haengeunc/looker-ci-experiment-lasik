@@ -5,6 +5,9 @@ connection: "haengeun_bq"
 # include all the views
 include: "/explores/*.lkml"
 
+label: "Haengeun E-commerce"
+
+
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
 
