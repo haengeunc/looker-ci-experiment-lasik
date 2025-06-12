@@ -3,15 +3,14 @@
 include: "/_staging_views/users.layer.lkml"
 include: "/_staging_views/order_items.layer.lkml"
 include: "/_staging_views/products.layer.lkml"
+include: "/_staging_views/fov_example.view"
+
 include: "/views/orders.view.lkml"
 
 
 
 explore: order_items {
   label: "Customers & Orders"
-  # always_filter: {
-  #   filters: [users.country: "Germany"]
-  # }
 
   join: users {
     type: left_outer
@@ -29,6 +28,11 @@ explore: order_items {
     type: left_outer
     sql_on: ${order_items.order_id} = ${orders.order_id} ;;
     relationship: many_to_one
+  }
+
+  join: fov_example {
+    relationship: one_to_one
+    sql: ;; # leave blank for bare joins
   }
 
 }
