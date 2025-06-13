@@ -1,6 +1,6 @@
-include: "/_staging_views/products.layer.lkml"
-include: "/_staging_views/inventory_items.layer.lkml"
-include: "/_staging_views/distribution_centers.layer.lkml"
+include: "/staging_views/products.layer.lkml"
+include: "/staging_views/inventory_items.layer.lkml"
+include: "/staging_views/distribution_centers.layer.lkml"
 
 
 explore: inventory_items {

@@ -9,19 +9,6 @@ view: +inventory_items {
     label: "Inventory Status"
   }
 
-  dimension: time_in_inventory_days {
-    type: number
-    sql: DATEDIFF('day', ${created_raw}, COALESCE(${sold_raw}, CURRENT_DATE())) ;;
-    label: "Time in Inventory (Days)"
-    description: "Days from creation to sale or current date if not sold."
-  }
-
-  dimension: inventory_status {
-    type: string
-    sql: CASE WHEN ${sold_raw} IS NULL THEN 'In Stock' ELSE 'Sold' END ;;
-    label: "Inventory Status"
-  }
-
   dimension: cost_tier {
     type: string
     case: {
@@ -38,18 +25,6 @@ view: +inventory_items {
     label: "Cost Tier"
   }
 
-  dimension: inventory_age_bucket {
-    type: string
-    sql: |
-          CASE
-            WHEN DATEDIFF('day', ${created_raw}, COALESCE(${sold_raw}, CURRENT_DATE())) <= 30 THEN '0-30 Days'
-            WHEN DATEDIFF('day', ${created_raw}, COALESCE(${sold_raw}, CURRENT_DATE())) <= 90 THEN '31-90 Days'
-            WHEN DATEDIFF('day', ${created_raw}, COALESCE(${sold_raw}, CURRENT_DATE())) <= 180 THEN '91-180 Days'
-            ELSE '180+ Days'
-          END
-        ;;
-    label: "Inventory Age Bucket"
-  }
 
   ####--------
 
@@ -115,12 +90,6 @@ view: +inventory_items {
     label: "Percentage of Items Sold"
   }
 
-  measure: average_days_in_inventory {
-    type: average
-    sql: DATEDIFF('day', ${created_raw}, ${sold_raw}) ;;
-    label: "Average Days in Inventory"
-    description: "Average number of days from creation to sale date."
-  }
 
 
 }
