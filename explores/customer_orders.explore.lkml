@@ -1,7 +1,7 @@
-include: "/_staging_views/users.layer.lkml"
-include: "/_staging_views/order_items.layer.lkml"
-include: "/_staging_views/products.layer.lkml"
-include: "/_staging_views/orders.layer.lkml"
+include: "/staging_views/users.layer.lkml"
+include: "/staging_views/order_items.layer.lkml"
+include: "/staging_views/products.layer.lkml"
+include: "/staging_views/orders.layer.lkml"
 
 
 
