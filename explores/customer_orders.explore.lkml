@@ -5,8 +5,10 @@ include: "/staging_views/orders.layer.lkml"
 
 
 
-explore: order_items {
+explore: customers_orders {
   label: "Customers & Orders"
+
+  view_name: order_items
 
   join: users {
     type: left_outer
@@ -30,16 +32,17 @@ explore: order_items {
     relationship: one_to_one
     sql: ;; # leave blank for bare joins
   }
-
 }
 
 #-----------------------------------------------------
 
 view: fov_example {
   #field-only view i.e. no sql_table_name argument
+  view_label: "Orders"
 
   measure: avg_orders_per_user{
     sql: ${orders.count} / ${users.count} ;;
     type: number
+    value_format_name: decimal_2
   }
 }
