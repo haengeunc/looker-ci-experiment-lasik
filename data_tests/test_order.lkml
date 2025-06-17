@@ -14,7 +14,7 @@ test: order_id_is_unique {
   }
 }
 
-test: order_items_2024 {
+test: order_items_count_matches_historic_2024 {
   explore_source: customer_orders {
     column: count { field: order_items.count }
     filters: {
@@ -22,7 +22,7 @@ test: order_items_2024 {
       value: "2024"
     }
   }
-  assert: historic_value {
-      expression: ${order_items.count_order_items} = 54049  ;;
+  assert: matches_historic_value {
+      expression: ${order_items.count} = 54049  ;;
   }
 }
