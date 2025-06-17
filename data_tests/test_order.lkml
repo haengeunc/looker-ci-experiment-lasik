@@ -14,17 +14,15 @@ test: order_id_is_unique {
   }
 }
 
-
-test: users_age_should_be_in_expected_range {
+test: order_items_2024 {
   explore_source: customer_orders {
-    column: age {
-      field: users.age
+    column: count { field: order_items.count }
+    filters: {
+      field: order_items.created_year
+      value: "2024"
     }
   }
-  assert: age_should_be_greater_than_zero {
-    expression: ${users.age} > 10 ;;
-  }
-  assert: age_should_be_less_than_130 {
-    expression: ${users.age} < 130 ;;
+  assert: historic_value {
+      expression: ${order_items.count_order_items} = 54049  ;;
   }
 }
