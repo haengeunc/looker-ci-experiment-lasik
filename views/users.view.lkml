@@ -20,7 +20,7 @@ view: users {
     map_layer_name: countries
     sql: ${TABLE}.country_name ;;
   }
-  dimension_group: created {
+  dimension_group: users_created {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.created_at ;;
