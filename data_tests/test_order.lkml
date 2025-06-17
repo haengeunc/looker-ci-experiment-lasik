@@ -1,7 +1,7 @@
 #Ensuring that a primary key is unique
 
 test: order_id_is_unique {
-  explore_source: order_items {
+  explore_source: customer_orders {
     column: order_id { field: orders.order_id }
     column: count { field: orders.count }
     # Sort and limit to quickly find potential duplicates
@@ -22,7 +22,7 @@ test: users_age_should_be_in_expected_range {
     }
   }
   assert: age_should_be_greater_than_zero {
-    expression: ${users.age} > 0 ;;
+    expression: ${users.age} > 12 ;;
   }
   assert: age_should_be_less_than_130 {
     expression: ${users.age} < 130 ;;
