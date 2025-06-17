@@ -11,10 +11,8 @@ view: +users {
 
   measure: average_age {
     type: average
-    sql: ${age} ;;  }
-
-
-
-
+    sql: ${age} ;;
+    value_format_name: decimal_2
+  }
 
 }

@@ -4,7 +4,7 @@ connection: "haengeun_bq"
 
 # include all the views
 include: "/explores/*.lkml"
-include: "/data_tests/test_order.lkml"
+include: "/data_tests/*.lkml"
 
 
 label: "Haengeun E-commerce"
