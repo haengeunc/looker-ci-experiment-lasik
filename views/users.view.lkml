@@ -18,7 +18,7 @@ view: users {
   dimension: country {
     type: string
     map_layer_name: countries
-    sql: ${TABLE}.country ;;
+    sql: ${TABLE}.country_name ;;
   }
   dimension_group: created {
     type: time
@@ -77,13 +77,13 @@ view: users {
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
-	id,
-	last_name,
-	first_name,
-	order_items.count,
-	orders.count,
-	events.count
-	]
+  id,
+  last_name,
+  first_name,
+  order_items.count,
+  orders.count,
+  events.count
+  ]
   }
 
 }
