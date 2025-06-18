@@ -5,7 +5,7 @@ include: "/staging_views/orders.layer.lkml"
 
 
 
-explore: customer_orders {
+explore: customer_order {
   label: "Customers & Orders"
 
   view_name: order_items
