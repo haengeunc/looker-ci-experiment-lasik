@@ -3,8 +3,10 @@ include: "/staging_views/inventory_items.layer.lkml"
 include: "/staging_views/distribution_centers.layer.lkml"
 
 
-explore: inventory_items {
-  label: "Fulfillment"
+explore: fulfillment {
+
+  view_name: inventory_items
+
   join: products {
     type: left_outer
     sql_on: ${inventory_items.product_id} = ${products.id} ;;
