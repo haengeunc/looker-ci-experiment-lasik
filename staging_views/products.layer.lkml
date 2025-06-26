@@ -12,8 +12,8 @@ view: +products {
     }
 
     # suggestions: ["Nike", "Speedo", "PUMA", "adidas", "Lee", "error"]
-    suggest_explore: fulfillme
-    suggest_dimension: inventory_items.product_catego
+    suggest_explore: fulfillment
+    suggest_dimension: inventory_items.product_brand
 
   }
 
