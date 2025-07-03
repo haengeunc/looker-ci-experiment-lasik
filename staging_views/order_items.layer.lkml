@@ -2,6 +2,10 @@ include: "/views/order_items.view.lkml"
 
 view: +order_items {
 
+  dimension_group: created {
+    timeframes: [raw, time, date, week, month, month_name, quarter, year]
+  }
+
   measure: total_sale_price {
     type: sum
     sql: ${sale_price} ;;
