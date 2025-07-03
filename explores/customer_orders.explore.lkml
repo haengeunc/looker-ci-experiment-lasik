@@ -3,7 +3,7 @@ include: "/staging_views/order_items.layer.lkml"
 include: "/staging_views/products.layer.lkml"
 include: "/staging_views/orders.layer.lkml"
 
-
+include: "/views_derived/user_order_facts.view.lkml"
 
 explore: customer_orders {
   label: "Customers & Orders"
@@ -14,6 +14,13 @@ explore: customer_orders {
     type: left_outer
     sql_on: ${order_items.user_id} = ${users.id} ;;
     relationship: many_to_one
+  }
+
+  join: user_order_facts {
+    view_label: "Users"
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${user_order_facts.user_id} = ${order_items.user_id} ;;
   }
 
   join: products {

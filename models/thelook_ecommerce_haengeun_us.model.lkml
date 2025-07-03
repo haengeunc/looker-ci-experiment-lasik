@@ -16,4 +16,9 @@ datagroup: thelook_ecommerce_haengeun_us_default_datagroup {
   max_cache_age: "1 hour"
 }
 
+datagroup: ecommerce_etl {
+  sql_trigger: SELECT max(created_at) FROM thelook_ecommerce_haengeun_us.events ;;
+  max_cache_age: "24 hours"
+}
+
 persist_with: thelook_ecommerce_haengeun_us_default_datagroup
