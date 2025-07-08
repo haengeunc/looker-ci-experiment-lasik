@@ -6,6 +6,17 @@ view: +order_items {
     timeframes: [raw, time, date, week, month, month_name, quarter, year]
   }
 
+  dimension: status {
+    html: {% if value == 'Shipped' or value == 'Complete' %}
+      <p>✅ {{value}}</p>
+    {% elsif value == 'Processing' %}
+      <p>⏳ {{value}}</p>
+    {% else %}
+      <p>❌ {{value}}</p>
+    {% endif %}
+   ;;
+  }
+
   measure: total_sale_price {
     type: sum
     sql: ${sale_price} ;;
