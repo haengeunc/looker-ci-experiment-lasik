@@ -8,11 +8,13 @@ view: orders {
     sql: ${TABLE}.order_id ;;
   }
   dimension_group: created {
+    description: "When the line item order was created"
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.created_at ;;
   }
   dimension_group: delivered {
+    description: "When the line item was delivered to the user"
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.delivered_at ;;
