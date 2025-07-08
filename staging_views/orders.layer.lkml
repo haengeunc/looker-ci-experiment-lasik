@@ -2,6 +2,18 @@ include: "/views/orders.view.lkml"
 
 view: +orders {
 
+  measure: first_order {
+    type: date
+    sql: MIN(${created_date}) ;;
+  }
+
+  measure: latest_order {
+    type: date
+    sql: MAX(${created_date}) ;;
+  }
+
+
+  ###### --- Period over period --- ####
 
   measure: order_count_last_month {
     type: period_over_period
