@@ -1,5 +1,5 @@
 view: inventory_items {
-  sql_table_name: `haengeun-429200.thelook_ecommerce_haengeun_us.inventory_items` ;;
+  sql_table_name: `bigquery-public-data.thelook_ecommerce.inventory_items` ;;
   drill_fields: [id]
 
   dimension: id {

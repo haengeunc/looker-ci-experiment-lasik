@@ -1,5 +1,5 @@
 view: users {
-  sql_table_name: `haengeun-429200.thelook_ecommerce_haengeun_us.users` ;;
+  sql_table_name: `bigquery-public-data.thelook_ecommerce.users` ;;
   drill_fields: [id]
 
   dimension: id {

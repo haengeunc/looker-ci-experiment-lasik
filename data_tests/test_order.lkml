@@ -23,6 +23,6 @@ test: order_items_count_matches_historic_2024 {
     }
   }
   assert: matches_historic_value {
-      expression: ${order_items.count} = 51374  ;;
+      expression: ${order_items.count} = 51049    ;;
   }
 }

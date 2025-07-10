@@ -1,5 +1,5 @@
 view: order_items {
-  sql_table_name: `haengeun-429200.thelook_ecommerce_haengeun_us.order_items` ;;
+  sql_table_name: `bigquery-public-data.thelook_ecommerce.order_items` ;;
   drill_fields: [id]
 
   dimension: id {
@@ -63,16 +63,16 @@ view: order_items {
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
-	id,
-	users.last_name,
-	users.id,
-	users.first_name,
-	inventory_items.id,
-	inventory_items.product_name,
-	products.name,
-	products.id,
-	orders.order_id
-	]
+  id,
+  users.last_name,
+  users.id,
+  users.first_name,
+  inventory_items.id,
+  inventory_items.product_name,
+  products.name,
+  products.id,
+  orders.order_id
+  ]
   }
 
 }
