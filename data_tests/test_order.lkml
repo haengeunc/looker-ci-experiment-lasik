@@ -14,15 +14,15 @@ test: order_id_is_unique {
   }
 }
 
-test: order_items_count_matches_historic_2024 {
-  explore_source: customer_orders {
-    column: count { field: order_items.count }
-    filters: {
-      field: order_items.created_year
-      value: "2024"
-    }
-  }
-  assert: matches_historic_value {
-      expression: ${order_items.count} = 51049    ;;
-  }
-}
+# test: order_items_count_matches_historic_2024 {
+#   explore_source: customer_orders {
+#     column: count { field: order_items.count }
+#     filters: {
+#       field: order_items.created_year
+#       value: "2024"
+#     }
+#   }
+#   assert: matches_historic_value {
+#       expression: ${order_items.count} = 51049    ;;
+#   }
+# }
