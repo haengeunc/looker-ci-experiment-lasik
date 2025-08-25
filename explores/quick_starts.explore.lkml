@@ -4,7 +4,7 @@ include: "/explores/customer_orders.explore.lkml"
 
 explore: +customer_orders {
   query: top_products_by_sales {
-    description: "Top 10 products by total sales price this year."
+    description: "Top 10 products by revenue this year."
     dimensions: [products.name]
     measures: [order_items.total_sale_price]
     filters: [order_items.created_date: "this year"]
