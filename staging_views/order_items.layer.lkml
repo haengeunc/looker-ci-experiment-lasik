@@ -21,7 +21,7 @@ view: +order_items {
     type: sum
     sql: ${sale_price} ;;
     value_format:"[>=1000]$#,##0,\"K\";[<1000]$#,##0"
-    synonyms: ["revenue", "total value", "gross sale"]
+    # synonyms: ["revenue", "total value", "gross sale"]
   }
 
   measure: average_sale_price {
