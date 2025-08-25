@@ -21,6 +21,7 @@ view: +order_items {
     type: sum
     sql: ${sale_price} ;;
     value_format:"[>=1000]$#,##0,\"K\";[<1000]$#,##0"
+    drill_fields: [products.name, products.brand,total_sale_price]
     # synonyms: ["revenue", "total value", "gross sale"]
   }
 
