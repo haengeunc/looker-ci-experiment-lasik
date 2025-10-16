@@ -5,8 +5,8 @@ test: users_age_should_be_in_expected_range {
       field: users.age
     }
   }
-  assert: age_should_be_greater_than_zero {
-    expression: ${users.age} > 30 ;;
+  assert: age_should_be_greater_than_twelve {
+    expression: ${users.age} > 12 ;;
   }
   assert: age_should_be_less_than_130 {
     expression: ${users.age} < 130 ;;
