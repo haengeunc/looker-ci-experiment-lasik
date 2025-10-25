@@ -9,6 +9,10 @@ view: +users {
     sql: CONCAT( ${first_name}, ' ', ${last_name}) ;;
   }
 
+  dimension: country {
+    drill_fields: [state, city]
+  }
+
   measure: average_age {
     type: average
     sql: ${age} ;;
