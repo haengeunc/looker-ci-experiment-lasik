@@ -37,6 +37,7 @@ explore: customer_orders {
     relationship: many_to_one
   }
 
+
   join: fov_example {
     relationship: one_to_one
     sql: ;; # leave blank for bare joins

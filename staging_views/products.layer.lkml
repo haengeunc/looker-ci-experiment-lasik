@@ -3,8 +3,7 @@ include: "/views/products.view.lkml"
 view: +products {
 
   dimension: brand {
-    type: string
-    sql: ${TABLE}.brand ;;
+    description: "The brand name of the product. Examples include 'Calvin Klein', 'Nike', 'Adidas'."
     link: {
       label: "Google"
       url: "https://www.google.com/search?q={{ value }}"
