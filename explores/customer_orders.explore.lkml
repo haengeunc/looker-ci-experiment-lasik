@@ -8,6 +8,7 @@ include: "/views_derived/user_order_facts.view.lkml"
 
 explore: customer_orders {
   label: "Customers & Orders"
+  description: "Explore information about orders placed by customers"
 
   view_name: order_items
 
