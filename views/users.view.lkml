@@ -76,6 +76,7 @@ view: users {
   dimension: traffic_source {
     type: string
     sql: ${TABLE}.traffic_source ;;
+    group_label: "User Details"
   }
   dimension: user_geom {
     type: string
