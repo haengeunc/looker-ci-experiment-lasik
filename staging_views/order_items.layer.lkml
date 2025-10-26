@@ -26,15 +26,6 @@ view: +order_items {
     synonyms: ["revenue", "total value", "unit price", "line item value"]
   }
 
-  measure: item_gross_margin {
-    label: "Item Gross Margin"
-    description: "The profit generated from a single item sale, calculated as (Sale Price - Cost). This is a key profitability metric, sometimes called 'Item Profit' or 'Unit Margin'."
-    type: number
-    value_format_name: usd
-    sql: ${TABLE}.sale_price - ${products.cost} ;;
-    synonyms: ["item profit", "unit margin"]
-  }
-
 
   measure: average_sale_price {
     type: average

@@ -16,4 +16,11 @@ view: +products {
 
   }
 
+  measure: total_cost {
+    description: "The total cost of an item"
+    type: sum
+    sql: ${cost} ;;
+    value_format:"[>=1000]$#,##0,\"K\";[<1000]$#,##0"
+  }
+
 }
