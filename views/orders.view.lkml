@@ -7,22 +7,26 @@ view: orders {
     type: number
     sql: ${TABLE}.order_id ;;
   }
+
+  dimension: user_id {
+    type: number
+    sql: ${TABLE}.user_id ;;
+  }
+
   dimension_group: created {
-    description: "When the line item order was created"
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.created_at ;;
   }
   dimension_group: delivered {
-    description: "When the line item was delivered to the user"
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.delivered_at ;;
   }
-  dimension: gender {
-    type: string
-    sql: ${TABLE}.gender ;;
-  }
+  # dimension: gender {
+  #   type: string
+  #   sql: ${TABLE}.gender ;;
+  # }
   dimension: num_of_item {
     type: number
     sql: ${TABLE}.num_of_item ;;
@@ -41,11 +45,7 @@ view: orders {
     type: string
     sql: ${TABLE}.status ;;
   }
-  dimension: user_id {
-    type: number
-    # hidden: yes
-    sql: ${TABLE}.user_id ;;
-  }
+
   measure: count {
     type: count
     drill_fields: [order_id, users.last_name, users.id, users.first_name, order_items.count]

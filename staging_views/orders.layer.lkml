@@ -12,6 +12,18 @@ view: +orders {
     sql: MAX(${created_date}) ;;
   }
 
+  dimension: user_id {
+    hidden: yes
+  }
+
+  dimension_group: created {
+    description: "When the line item order was created"
+  }
+
+  dimension_group: delivered {
+    description: "When the line item was delivered to the user"
+  }
+
 
   ###### --- Period over period --- ####
 

@@ -44,12 +44,14 @@ view: user_order_facts {
     dimension: days_as_customer {
       label: "Days As Customer"
       description: "Days between first and latest order"
+      group_label: "Lifetime Profile"
       type: number
       sql: TIMESTAMP_DIFF(${TABLE}.latest_order, ${TABLE}.first_order, DAY)+1 ;;
     }
 
     dimension: days_as_customer_tiered {
       label: "Days as Customer Tiered"
+      group_label: "Lifetime Profile"
       type: tier
       tiers: [0, 1, 7, 14, 21, 28, 30, 60, 90, 120]
       sql: ${days_as_customer} ;;
@@ -60,12 +62,14 @@ view: user_order_facts {
 
     dimension: lifetime_orders {
       label: "Lifetime Orders"
+      group_label: "Lifetime Profile"
       type: number
       sql: ${TABLE}.lifetime_orders ;;
     }
 
     dimension: repeat_customer {
       label: "Repeat Customer"
+      group_label: "Lifetime Profile"
       description: "Lifetime Count of Orders > 1"
       type: yesno
       sql: ${lifetime_orders} > 1 ;;
@@ -73,6 +77,7 @@ view: user_order_facts {
 
     dimension: lifetime_orders_tier {
       label: "Lifetime Orders Tier"
+      group_label: "Lifetime Profile"
       type: tier
       tiers: [0, 1, 2, 3, 5, 10]
       sql: ${lifetime_orders} ;;
@@ -87,7 +92,8 @@ view: user_order_facts {
     }
 
     dimension: distinct_months_with_orders {
-      label: "Distinct Months with Orders"
+      label: "Number of Months with Active Orders"
+      group_label: "Lifetime Profile"
       type: number
       sql: ${TABLE}.number_of_distinct_months_with_orders ;;
     }
@@ -96,6 +102,7 @@ view: user_order_facts {
 
     dimension: lifetime_revenue {
       label: "Lifetime Revenue"
+      group_label: "Lifetime Profile"
       type: number
       value_format_name: usd
       sql: ${TABLE}.lifetime_revenue ;;
@@ -103,6 +110,7 @@ view: user_order_facts {
 
     dimension: lifetime_revenue_tier {
       label: "Lifetime Reveneue Tier"
+      group_label: "Lifetime Profile"
       type: tier
       tiers: [0, 25, 50, 100, 200, 500, 1000]
       sql: ${lifetime_revenue} ;;
@@ -117,6 +125,7 @@ view: user_order_facts {
     }
 
     dimension: currently_active_customer {
+      group_label: "Lifetime Profile"
       type: yesno
       sql: ${latest_order_date} >= DATE_ADD(CURRENT_DATE, INTERVAL -30 DAY) ;;
     }
