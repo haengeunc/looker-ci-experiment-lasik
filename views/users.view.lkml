@@ -20,7 +20,7 @@ view: users {
   dimension: country {
     type: string
     map_layer_name: countries
-    sql: ${TABLE}.country ;;
+    sql: ${TABLE}.country_name ;;
     group_label: "Location"
   }
   dimension_group: created {
